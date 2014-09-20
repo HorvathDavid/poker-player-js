@@ -1,6 +1,6 @@
 module.exports = {
-	doRaise : function (game_state) {
-      return this.doCall(game_state) + game_state.minimum_raise;
+    doRaise: function (game_state, amount) {
+      return this.doCall(game_state) + amount;
     },
 
     doCheckOrFold : function (game_state) {
@@ -12,6 +12,11 @@ module.exports = {
     },
 
     doAllIn : function (game_state) {
+        return this.getOurStack(game_state);
+    },
+
+    getOurStack : function(game_state)
+    {
         return game_state.players[game_state.in_action].stack;
     },
 
