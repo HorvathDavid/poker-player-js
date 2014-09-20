@@ -27,7 +27,7 @@ module.exports = {
     console.log(game_state);
 
     return (retval);
-  }
+  },
 
   /*Helper : {
     doRaise : function (game_state) {
