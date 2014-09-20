@@ -7,16 +7,16 @@ module.exports = {
 
     var retval = 0;
 
-    var rankedMyCards = getMyCards(getMyCards(game_state).concat(getCommunityCards(game_state)));
-    var rankedOthersCards = getMyCards(getCommunityCards(game_state));
+    var rankedMyCards = Helper.rankCards(Helper.getMyCards(game_state).concat(Helper.getCommunityCards(game_state)));
+    var rankedOthersCards = Helper.rankCards(Helper.getCommunityCards(game_state));
 
     if (rankedMyCards > rankedOthersCards) {
-      var retval = doRaise(game_state);
+      retval = Helper.doRaise(game_state);
     } else {
       if (rankedMyCards = rankedOthersCards) {
-         var retval = doCall(game_state);
+        retval = Helper.doCall(game_state);
       } else {
-        var retval = doCheckOrFold(game_state);
+        retval = Helper.doCheckOrFold(game_state);
       }
     }
 
@@ -26,34 +26,38 @@ module.exports = {
     return (retval);
   },
 
-  doRaise : function (game_state) {
-    return doCall(game_state) + game_state.minimum_raise;
-  },
+  Helper : {
+    doRaise : function (game_state) {
+      return doCall(game_state) + game_state.minimum_raise;
+    },
 
-  doCheckOrFold : function (game_state) {
-    return 0;
-  },
-
-  doCall : function (game_state) {
-    return  ( game_state.current_buy_in - getMyCurrentBet() );
-  },
-
-  getMyCurrentBet : function(game_state) {
-    return game_state.players[game_state.in_action].bet || 0;
-  },
-
-  getMyCards : function(game_state) {
-    return game_state.players[game_state.in_action].hole_cards;
-  },
-
-  getCommunityCards : function(game_state) {
-    return game_state.community_cards;
-  },
-
-  rankCards : function(cards) {
-      //ide irnak
+    doCheckOrFold : function (game_state) {
       return 0;
-  },
+    },
+
+    doCall : function (game_state) {
+      return  ( game_state.current_buy_in - getMyCurrentBet() );
+    },
+
+    getMyCurrentBet : function(game_state) {
+      return game_state.players[game_state.in_action].bet || 0;
+    },
+
+    getMyCards : function(game_state) {
+      return game_state.players[game_state.in_action].hole_cards;
+    },
+
+    getCommunityCards : function(game_state) {
+      return game_state.community_cards;
+    },
+
+    rankCards : function(cards) {
+        //ide irnak
+        return 0;
+    }
+    
+  }
+
 
   showdown: function(game_state) {
 
