@@ -7,16 +7,16 @@ module.exports = {
 
     var retval = 0;
 
-    var rankedMyCards = Helper.rankCards(Helper.getMyCards(game_state).concat(Helper.getCommunityCards(game_state)));
-    var rankedOthersCards = Helper.rankCards(Helper.getCommunityCards(game_state));
+    var rankedMyCards = this.Helper.rankCards(this.Helper.getMyCards(game_state).concat(this.Helper.getCommunityCards(game_state)));
+    var rankedOthersCards = this.Helper.rankCards(this.Helper.getCommunityCards(game_state));
 
     if (rankedMyCards > rankedOthersCards) {
-      retval = Helper.doRaise(game_state);
+      retval = this.Helper.doRaise(game_state);
     } else {
       if (rankedMyCards = rankedOthersCards) {
-        retval = Helper.doCall(game_state);
+        retval = this.Helper.doCall(game_state);
       } else {
-        retval = Helper.doCheckOrFold(game_state);
+        retval = this.Helper.doCheckOrFold(game_state);
       }
     }
 
