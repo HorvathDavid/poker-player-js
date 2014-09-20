@@ -15,7 +15,7 @@ module.exports = {
     var rankedOthersCards = rank.rankCards(helper.getCommunityCards(game_state));
 
     if (rankedMyCards > rankedOthersCards) {
-        if (helper.isGreaterRank(rankedMyCards, "2")) {
+        if (rankedMyCards >= 2) {
             console.log("XXX we all in");
             retval = helper.doAllIn(game_state);
         }
