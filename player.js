@@ -1,6 +1,6 @@
 
-var helper = require('helper.js');
-var rank = require('rank.js');
+var helper = require('./helper.js');
+var rank = require('./rank.js');
 
 
 module.exports = {
