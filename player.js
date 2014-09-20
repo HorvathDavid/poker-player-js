@@ -56,7 +56,7 @@ module.exports = {
         return 0;
     }
     
-  }
+  },
 
 
   showdown: function(game_state) {
