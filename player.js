@@ -4,8 +4,11 @@ module.exports = {
   VERSION: "Default JavaScript folding player",
 
   bet_request: function(game_state) {
-  	console.log(game_state);
-    return (game_state.current_buy_in - game_state.players.Pogacsa.bet);
+  	console.log(game_state.players);
+
+var bet = game_state.players[game_state.in_action].bet || 0;
+
+    return (game_state.current_buy_in - bet);
   },
 
   showdown: function(game_state) {
