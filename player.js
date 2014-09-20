@@ -17,7 +17,7 @@ module.exports = {
          var retval = doCall(game_state);
       } else {
         var retval = doCheckOrFold(game_state);
-      };
+      }
     },
 
     console.log(game_state);
