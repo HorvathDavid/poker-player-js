@@ -21,7 +21,6 @@ module.exports = {
     }
 
     console.log(game_state);
-    console.log(allcards);
 
     return (retval);
   },
