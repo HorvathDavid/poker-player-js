@@ -18,7 +18,7 @@ module.exports = {
       } else {
         var retval = doCheckOrFold(game_state);
       }
-    },
+    };
 
     console.log(game_state);
     console.log(allcards);
