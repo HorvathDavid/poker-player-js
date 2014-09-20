@@ -3,23 +3,22 @@ module.exports = {
 
 		var retval = 0;    	
     	
-    	var foundPairRank = this.findPair(cards);
-    	if (typeof foundPairRank !== "undefined")
-    	{
-    		if (this.isGreaterRank(foundPairRank, "8"))
-    		{
-    			retval = 2;
-    		}
-    	}
-    	else
-    	{
-    	    var highestCard = this.getHighestCardRank(cards);
-    	    if (this.isGreaterRank(highestCard, "10"))
-    	    {
-    	        retval = 1;
-    	    }
+		if (cards.length >= 2) {
 
-    	}
+		    var foundPairRank = this.findOfSameRank(cards);
+		    if (typeof foundPairRank !== "undefined") {
+		        if (this.isGreaterRank(foundPairRank, "8")) {
+		            retval = 2;
+		        }
+		    }
+		    else {
+		        var highestCard = this.getHighestCardRank(cards);
+		        if (this.isGreaterRank(highestCard, "10")) {
+		            retval = 1;
+		        }
+
+		    }
+		}
 
         return retval;
     },
@@ -39,7 +38,7 @@ module.exports = {
         return highestCardRank;
     },
 
-    findPair : function (cards) {
+    findOfSameRank : function (cards) {
 
     	var foundPairRank;
 
