@@ -1,4 +1,8 @@
 
+var helper = require('helper.js');
+var rank = require('rank.js');
+
+
 module.exports = {
 
   VERSION: "Pogacsa",
@@ -7,25 +11,25 @@ module.exports = {
 
     var retval = 0;
 
-    var rankedMyCards = this.Helper.rankCards(this.Helper.getMyCards(game_state).concat(this.Helper.getCommunityCards(game_state)));
-    var rankedOthersCards = this.Helper.rankCards(this.Helper.getCommunityCards(game_state));
+    var rankedMyCards = helper.rankCards(helper.getMyCards(game_state).concat(helper.getCommunityCards(game_state)));
+    var rankedOthersCards = helper.rankCards(helper.getCommunityCards(game_state));
 
     if (rankedMyCards > rankedOthersCards) {
-      retval = this.Helper.doRaise(game_state);
+      retval = helper.doRaise(game_state);
     } else {
       if (rankedMyCards = rankedOthersCards) {
-        retval = this.Helper.doCall(game_state);
+        retval = helper.doCall(game_state);
       } else {
-        retval = this.Helper.doCheckOrFold(game_state);
+        retval = helper.doCheckOrFold(game_state);
       }
     }
 
     console.log(game_state);
 
     return (retval);
-  },
+  }
 
-  Helper : {
+  /*Helper : {
     doRaise : function (game_state) {
       return doCall(game_state) + game_state.minimum_raise;
     },
@@ -55,7 +59,7 @@ module.exports = {
         return 0;
     }
     
-  },
+  },*/
 
 
   showdown: function(game_state) {
