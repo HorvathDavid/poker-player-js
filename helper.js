@@ -21,10 +21,5 @@ module.exports = {
 
     getCommunityCards : function(game_state) {
       return game_state.community_cards;
-    },
-
-    rankCards : function(cards) {
-        //ide irnak
-        return 0;
     }
 }

@@ -1,6 +1,6 @@
 var _ = require('lodash/dist/lodash.underscore');
 module.exports = {
-    rank: function (cards) {
+    rankCards: function (cards) {
 //        _.find(cards, function (card) {
 //            return true;
 //        });

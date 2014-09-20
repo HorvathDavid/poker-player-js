@@ -11,8 +11,8 @@ module.exports = {
 
     var retval = 0;
 
-    var rankedMyCards = helper.rankCards(helper.getMyCards(game_state).concat(helper.getCommunityCards(game_state)));
-    var rankedOthersCards = helper.rankCards(helper.getCommunityCards(game_state));
+    var rankedMyCards = rank.rankCards(helper.getMyCards(game_state).concat(helper.getCommunityCards(game_state)));
+    var rankedOthersCards = rank.rankCards(helper.getCommunityCards(game_state));
 
     if (rankedMyCards > rankedOthersCards) {
       retval = helper.doRaise(game_state);
