@@ -4,7 +4,7 @@ module.exports = {
   VERSION: "Pogacsa",
 
     function rank(pages) {
-
+        return 0;
 }
 
   bet_request: function(game_state) {
