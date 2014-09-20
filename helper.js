@@ -1,6 +1,6 @@
 module.exports = {
 	doRaise : function (game_state) {
-      return doCall(game_state) + game_state.minimum_raise;
+      return this.doCall(game_state) + game_state.minimum_raise;
     },
 
     doCheckOrFold : function (game_state) {
