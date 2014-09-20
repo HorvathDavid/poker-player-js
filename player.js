@@ -3,6 +3,10 @@ module.exports = {
 
   VERSION: "Pogacsa",
 
+    function rank(pages) {
+
+}
+
   bet_request: function(game_state) {
   	console.log(game_state);
   	console.log(game_state.players[game_state.in_action].hole_cards);
