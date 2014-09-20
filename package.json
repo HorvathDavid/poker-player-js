@@ -5,6 +5,10 @@
   "private": true,
   "dependencies": {
     "express": "3.x",
+<<<<<<< HEAD
     "request-json": "^0.4.12"
+=======
+    "lodash": "^2.4.1"
+>>>>>>> 0c1387df34fcdb6b30c00076d7cc2e24fe23bc92
   }
 }
