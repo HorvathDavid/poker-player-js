@@ -11,13 +11,13 @@ module.exports = {
     var rankedOthersCards = getMyCards(getCommunityCards(game_state));
 
     if (rankedMyCards > rankedOthersCards) {
-      retval = doRaise(game_state);
+      var retval = doRaise(game_state);
     } else {
       if (rankedMyCards = rankedOthersCards) {
-        retval = doCall(game_state);
+         var retval = doCall(game_state);
       } else {
-        retval = doCheckOrFold(game_state);
-      }
+        var retval = doCheckOrFold(game_state);
+      };
     },
 
     console.log(game_state);
