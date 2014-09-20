@@ -8,7 +8,7 @@ module.exports = {
     },
 
     doCall : function (game_state) {
-      return  ( game_state.current_buy_in - getMyCurrentBet() );
+      return  ( game_state.current_buy_in - this.getMyCurrentBet() );
     },
 
     getMyCurrentBet : function(game_state) {
