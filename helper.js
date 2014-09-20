@@ -11,6 +11,10 @@ module.exports = {
       return  ( game_state.current_buy_in - this.getMyCurrentBet(game_state) );
     },
 
+    doAllIn : function (game_state) {
+        return game_state.players[game_state.in_action].stack;
+    },
+
     getMyCurrentBet : function(game_state) {
       return game_state.players[game_state.in_action].bet || 0;
     },

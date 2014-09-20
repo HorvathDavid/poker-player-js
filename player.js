@@ -16,7 +16,7 @@ module.exports = {
 
     if (rankedMyCards > rankedOthersCards) {
         console.log("XXX we raise");
-      retval = helper.doRaise(game_state);
+        retval = helper.doRaise(game_state);
     } else {
       if (rankedMyCards = rankedOthersCards) {
           console.log("XXX we call");
