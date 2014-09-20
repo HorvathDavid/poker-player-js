@@ -1,16 +1,14 @@
-
+var ranker = require('./rank.js');
 module.exports = {
 
   VERSION: "Pogacsa",
-
-    function rank(pages) {
-        return 0;
-}
 
   bet_request: function(game_state) {
   	console.log(game_state);
   	console.log(game_state.players[game_state.in_action].hole_cards);
   	console.log(game_state.community_cards);
+
+    console.log(ranker.rank("hello"));
 
   	var mycard = game_state.players[game_state.in_action].hole_cards;
 
