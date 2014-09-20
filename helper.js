@@ -25,5 +25,24 @@ module.exports = {
 
     getCommunityCards : function(game_state) {
       return game_state.community_cards;
+    },
+
+
+    getRankOrder: function () {
+        return ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+    },
+
+    isGreaterRank: function (rank, isGreaterthanRank) {
+
+        var isGreater = false;
+
+        var rankOrder = this.getRankOrder();
+        var indexOfRank = rankOrder.indexOf(rank);
+        var indexOfIsGreaterThanRank = rankOrder.indexOf(isGreaterthanRank);
+
+        isGreater = (indexOfRank > indexOfIsGreaterThanRank);
+
+        return isGreater;
     }
+
 }

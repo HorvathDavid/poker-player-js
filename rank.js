@@ -1,3 +1,5 @@
+var helper = require('./helper.js');
+
 module.exports = {
     rankCards: function (cards) {
 
@@ -47,7 +49,7 @@ module.exports = {
 		    }
 		    else {
 		        var highestCard = this.getHighestCardRank(cards);
-		        if (this.isGreaterRank(highestCard, "10")) {
+		        if (helper.isGreaterRank(highestCard, "10")) {
 		            retval = 1;
 		        }
 
@@ -76,7 +78,7 @@ module.exports = {
 
         var foundPairRank = [];
 
-    	var rankOrder = this.getRankOrder();
+    	var rankOrder = helper.getRankOrder();
     	for (k = rankOrder.length; k >= 0; k--)
     	{
     	    var found = 0;
@@ -95,22 +97,5 @@ module.exports = {
     	}
 
 		return foundPairRank;
-    },
-
-    getRankOrder : function(){
-        return ["2","3","4","5","6","7","8","9","10","J","Q","K","A"];
-    },
-
-    isGreaterRank : function(rank, isGreaterthanRank) {
-
-        var isGreater = false;
-
-    	var rankOrder = this.getRankOrder();
-    	var indexOfRank = rankOrder.indexOf(rank);
-    	var indexOfIsGreaterThanRank = rankOrder.indexOf(isGreaterthanRank);
-
-    	isGreater = (indexOfRank > indexOfIsGreaterThanRank);
-
-    	return isGreater;
     }
 };
