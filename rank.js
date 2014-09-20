@@ -5,7 +5,7 @@ module.exports = {
 		var retval = 0;    	
     	
     	var foundPairRank = this.findPair(cards);
-    	if (typeOf foundPairRank !== "undefined")
+    	if (typeof foundPairRank !== "undefined")
     	{
     		if (isGreaterRank(foundPairRank, "8"))
     		{
