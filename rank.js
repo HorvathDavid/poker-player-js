@@ -12,9 +12,14 @@ module.exports = {
 		    {
 		        var pairsFound = 0;
 		        var threeFound = false;
+		        var fourFound = false;
 		        for(i=0; i<foundPairRank.length; i++)
 		        {
-		            if (foundPairRank[i].found > 2)
+		            if (foundPairRank[i].found > 3)
+		            {
+		                fourFound = true;
+		            }
+		            else if (foundPairRank[i].found > 2)
 		            {
 		                threeFound = true;
 		            }
@@ -32,18 +37,22 @@ module.exports = {
 		            }
 		            else
 		            {
-		                retval = 1;
+		                retval = 2;
 		            }
 		        }
-		        else 
+		        else if (pairsFound == 2)
+		        {
+		            retval = 3;
+		        }
+                else
 		        {
 		            if (threeFound)
 		            {
 		                retval = 4;
 		            }
-		            else
+		            else if (fourFound)
 		            {
-		                retval = 3;
+		                retval = 8;
 		            }
 		        }
 		    }
@@ -56,7 +65,49 @@ module.exports = {
 		    }
 		}
 
-        return retval;
+		console.log("--- rank");
+		console.log(cards);
+		console.log(retval);
+		console.log("---");
+
+		return retval;
+    },
+
+    findStraight : function(cards)
+    {
+        var highestCardOfStraight;
+
+        var rankOrder = helper.getRankOrder();
+        for (k = rankOrder.length; k >= 4; k--)
+        {
+            var currentHighestCard = rankOrder[k];
+            for(j=k; j>=k-5;j--)
+            {
+                var currentCardToFound = rankOrder[j];
+
+                var found = false;
+                for(i=0; i<cards.length; i++)
+                {
+                    if (cards[i].rank == rankOrder[j])
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found)
+                {
+                    break;
+                }
+            }
+
+            if (typeof highestCardOfStraight !== "undefined")
+            {
+                break;
+            }
+        }
+
+        return highestCardOfStraight;
     },
 
     getHighestCardRank : function(cards)
