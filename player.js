@@ -15,12 +15,15 @@ module.exports = {
     var rankedOthersCards = rank.rankCards(helper.getCommunityCards(game_state));
 
     if (rankedMyCards > rankedOthersCards) {
+        console.log("XXX we raise");
       retval = helper.doRaise(game_state);
     } else {
       if (rankedMyCards = rankedOthersCards) {
-        retval = helper.doCall(game_state);
+          console.log("XXX we call");
+          retval = helper.doCall(game_state);
       } else {
-        retval = helper.doCheckOrFold(game_state);
+          console.log("XXX we check or fold");
+          retval = helper.doCheckOrFold(game_state);
       }
     }
 

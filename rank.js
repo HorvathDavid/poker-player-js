@@ -7,7 +7,7 @@ module.exports = {
     	var foundPairRank = this.findPair(cards);
     	if (typeof foundPairRank !== "undefined")
     	{
-    		if (isGreaterRank(foundPairRank, "8"))
+    		if (this.isGreaterRank(foundPairRank, "8"))
     		{
     			retval = 1;
     		}
@@ -40,7 +40,7 @@ module.exports = {
 
     	var rankOrder = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"];
     	var indexOfRank = rankOrder.indexOf(rank);
-    	var indexOfIsGreaterThanRank = rankO.inű(isGreaterthanRank);
+    	var indexOfIsGreaterThanRank = rankOrder.indexOf(isGreaterthanRank);
 
     	isGreater = (indexOfRank > indexOfIsGreaterThanRank);
 
